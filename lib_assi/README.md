@@ -28,4 +28,4 @@ The project demonstrates my understanding of:
 ## Installation & Setup
 1. Clone this repository:
    ```bash
-   git clone <your-repo-link>
+   https://github.com/Nabeelgitz/django-book-manager
