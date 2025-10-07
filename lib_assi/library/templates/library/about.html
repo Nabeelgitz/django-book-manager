@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+/* Container for centering */
+.about-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+    padding: 2rem;
+}
+
+/* Main Card */
+.about-card {
+    background: var(--bg-light);
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+    max-width: 750px;
+    width: 100%;
+    animation: fadeIn 0.8s ease-in-out;
+    border: 1px solid #333; /* subtle border to match theme */
+}
+
+/* Heading */
+.about-card h2 {
+    text-align: center;
+    color: var(--accent); /* theme blue */
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    letter-spacing: 1px;
+}
+
+/* Paragraph */
+.about-card p {
+    margin-bottom: 1.2rem;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--text-color); /* theme text color */
+}
+
+/* Highlight Quote */
+.quote-box {
+    background: rgba(86, 156, 214, 0.1); /* translucent accent */
+    border-left: 4px solid var(--accent-hover);
+    padding: 1rem 1.5rem;
+    margin-top: 2rem;
+    border-radius: 8px;
+    font-style: italic;
+    text-align: center;
+    color: var(--accent-hover);
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+</style>
+
+<div class="about-container">
+    <div class="about-card">
+        <h2>📚 About This Project</h2>
+        <p>
+            <strong>Nabeel Ahmed</strong> is a passionate learner exploring the world of the Django framework.  
+            The magic of Django — its <em>Models</em> and <em>Templating Engine (Jinja)</em> — 
+            opened a whole new perspective for him in web development.
+        </p>
+
+        <p>
+            This project is designed to help you manage your personal library.  
+            You can add books, track authors, categories, and maintain records with ease.  
+            Simple, clean, and efficient.
+        </p>
+
+        <div class="quote-box">
+            <p>“Organizing knowledge is an art, and this project is a humble step towards that art.”</p>
+        </div>
+    </div>
+</div>
+{% endblock content %}

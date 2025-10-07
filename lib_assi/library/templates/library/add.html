@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+.add-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+    padding: 2rem;
+}
+
+.add-card {
+    background: var(--bg-light);
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+    max-width: 650px;
+    width: 100%;
+    border: 1px solid #333;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+.add-card h2 {
+    text-align: center;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    letter-spacing: 1px;
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.form-group label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.form-group input, 
+.form-group select {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 8px;
+    border: 1px solid #444;
+    background: #f9f9f9;
+    font-size: 1rem;
+}
+
+.submit-btn {
+    display: block;
+    width: 100%;
+    background: var(--accent);
+    color: white;
+    padding: 0.9rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.submit-btn:hover {
+    background: var(--accent-hover);
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+</style>
+
+<div class="add-container">
+    <div class="add-card">
+        <h2>➕ Add a New Book</h2>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="name">Book Name</label>
+                <input type="text" name="name" id="name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="author">Author</label>
+                <input type="text" name="author" id="author" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="category">Category</label>
+                <input type="text" name="category" id="category">
+            </div>
+            
+            <div class="form-group">
+                <label for="date">Published / Added Date</label>
+                <input type="date" name="date" id="date" required>
+            </div>
+            
+            <button type="submit" class="submit-btn">Save Book</button>
+        </form>
+    </div>
+</div>
+{% endblock content %}

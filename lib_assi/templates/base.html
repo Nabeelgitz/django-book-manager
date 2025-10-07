@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Nest</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">BOOK_NEST</div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>l
+                <li><a href="{% url 'add' %}">Add</a></li>
+                <li><a href="{% url 'remove' %}">Remove</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Content -->
+    <main class="content">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2025 Book Nest | All Rights Reserved</p>
+        <p>Made with ❤ in Django</p>
+    </footer>
+</body>
+</html>

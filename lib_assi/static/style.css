@@ -1,0 +1,95 @@
+/* One Dark Pro Inspired Theme */
+:root {
+    --bg-dark: #1e1e1e;
+    --bg-light: #2d2d2d;
+    --text-color: #d4d4d4;
+    --accent: #569cd6;   /* blue */
+    --accent-hover: #3794ff;
+    --danger: #d16969;   /* red */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--bg-light);
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.6);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+/* Logo */
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--accent);
+    letter-spacing: 2px;
+    transition: transform 0.3s ease-in-out;
+}
+.logo:hover {
+    transform: scale(1.1) rotate(-2deg);
+    color: var(--accent-hover);
+}
+
+/* Navbar */
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+.navbar a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+.navbar a:hover {
+    background-color: var(--accent);
+    color: #fff;
+}
+
+/* Content */
+.content {
+    flex: 1;
+    padding: 2rem;
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    background-color: var(--bg-light);
+    padding: 1rem;
+    font-size: 0.9rem;
+    color: #999;
+    border-top: 1px solid #333;
+}
+.footer p:first-child {
+    margin-bottom: 0.3rem;
+}
+
